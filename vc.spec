@@ -8,7 +8,7 @@ Name: vc
 Version: 0.7.1
 %if "%{beta}" == ""
 %if "%{scmrev}" == ""
-Release: 1
+Release: 2
 Source: http://code.compeng.uni-frankfurt.de/attachments/download/161/Vc-%version.tar.gz
 %else
 Release: 0.%{scmrev}.1
@@ -53,6 +53,7 @@ Thus an application written with Vc can be compiled for
 %package -n %{devname}
 Summary: Development files for %{name}
 Group: Development/C
+Provides: %name-devel
 
 %description -n %{devname}
 Development files (Headers etc.) for %{name}.
