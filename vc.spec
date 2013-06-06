@@ -8,7 +8,7 @@ Name: vc
 Version: 0.7.1
 %if "%{beta}" == ""
 %if "%{scmrev}" == ""
-Release: 2
+Release: 1
 Source: http://code.compeng.uni-frankfurt.de/attachments/download/161/Vc-%version.tar.gz
 %else
 Release: 0.%{scmrev}.1
@@ -23,6 +23,7 @@ Release: 0.%{beta}.%{scmrev}.1
 Source: %{name}-%{scmrev}.tar.xz
 %endif
 %endif
+BuildRequires: cmake gcc-c++
 Summary: Library to ease explicit vectorization of C++ code
 URL: http://code.compeng.uni-frankfurt.de/projects/vc
 License: LGPLv3
