@@ -8,7 +8,7 @@ Name: vc
 Version: 0.7.1
 %if "%{beta}" == ""
 %if "%{scmrev}" == ""
-Release: 1
+Release: 2
 Source: http://code.compeng.uni-frankfurt.de/attachments/download/161/Vc-%version.tar.gz
 %else
 Release: 0.%{scmrev}.1
