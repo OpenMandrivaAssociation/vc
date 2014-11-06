@@ -67,6 +67,8 @@ Development files (Headers etc.) for %{name}.
 %endif
 
 %build
+export CC=gcc
+export CXX=g++
 %cmake
 %make
 
