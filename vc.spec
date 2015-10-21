@@ -72,7 +72,7 @@ Development files (Headers etc.) for %{name}.
 %build
 export CC=gcc
 export CXX=g++
-%cmake
+%cmake -DBUILD_TESTING=OFF
 %make
 
 %install
