@@ -1,2 +1,4 @@
+removed_sources:
+  Vc-0.7.1.tar.gz: 1669303dcd6f808aeedc8ef793b035dc4e442f69
 sources:
-  "Vc-0.7.1.tar.gz": 1669303dcd6f808aeedc8ef793b035dc4e442f69
+  Vc-0.7.5.tar.gz: 946ec6e1fa5b327fe4f7085361d083bc9158cbcf

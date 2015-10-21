@@ -4,12 +4,15 @@
 %define scmrev %{nil}
 %define devname %mklibname vc -d -s
 
+# static only
+%define _disable_lto 1
+
 Name: vc
-Version: 0.7.1
+Version: 0.7.5
 %if "%{beta}" == ""
 %if "%{scmrev}" == ""
-Release: 9
-Source: http://code.compeng.uni-frankfurt.de/attachments/download/161/Vc-%version.tar.gz
+Release: 1
+Source: https://github.com/VcDevel/Vc/releases/download/%{version}/Vc-%version.tar.gz
 %else
 Release: 0.%{scmrev}.1
 Source: %{name}-%{scmrev}.tar.xz
@@ -25,13 +28,13 @@ Source: %{name}-%{scmrev}.tar.xz
 %endif
 BuildRequires: cmake gcc-c++
 Summary: Library to ease explicit vectorization of C++ code
-URL: http://code.compeng.uni-frankfurt.de/projects/vc
+URL: https://github.com/VcDevel/Vc
 License: LGPLv3
 Group: System/Libraries
 
 %track
 prog %{name} = {
-	url = http://code.compeng.uni-frankfurt.de/projects/vc/files
+	url = https://github.com/VcDevel/Vc/releases/download/(__VER__)
 	regex = "Vc-(__VER__)\.tar\.gz"
 	version = %{version}
 }
