@@ -8,7 +8,7 @@
 %define _disable_lto 1
 
 Name: vc
-Version: 0.7.5
+Version: 1.2.0
 %if "%{beta}" == ""
 %if "%{scmrev}" == ""
 Release: 1
@@ -70,8 +70,6 @@ Development files (Headers etc.) for %{name}.
 %endif
 
 %build
-export CC=gcc
-export CXX=g++
 %cmake -DBUILD_TESTING=OFF
 %make
 
