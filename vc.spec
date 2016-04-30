@@ -26,6 +26,7 @@ Release: 0.%{beta}.%{scmrev}.1
 Source: %{name}-%{scmrev}.tar.xz
 %endif
 %endif
+Patch0: Vc-1.2.0-x86_32.patch
 BuildRequires: cmake gcc-c++
 Summary: Library to ease explicit vectorization of C++ code
 URL: https://github.com/VcDevel/Vc
@@ -68,6 +69,7 @@ Development files (Headers etc.) for %{name}.
 %else
 %setup -q -n Vc
 %endif
+%apply_patches
 
 %build
 %cmake -DBUILD_TESTING=OFF
