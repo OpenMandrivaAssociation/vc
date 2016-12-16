@@ -11,7 +11,7 @@ Name: vc
 Version: 1.3.0
 %if "%{beta}" == ""
 %if "%{scmrev}" == ""
-Release: 1
+Release: 2
 Source0: https://github.com/VcDevel/Vc/releases/download/%{version}/Vc-%version.tar.gz
 %else
 Release: 0.%{scmrev}.1
@@ -72,7 +72,7 @@ Development files (Headers etc.) for %{name}.
 %apply_patches
 
 %build
-%cmake -DBUILD_TESTING=OFF
+%cmake -DBUILD_TESTING=OFF -DUSE_LIBC++:BOOL=OFF
 %make
 
 %install
