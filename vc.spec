@@ -8,22 +8,22 @@
 %define _disable_lto 1
 
 Name: vc
-Version: 1.2.0
+Version: 1.3.0
 %if "%{beta}" == ""
 %if "%{scmrev}" == ""
-Release: 1
-Source: https://github.com/VcDevel/Vc/releases/download/%{version}/Vc-%version.tar.gz
+Release: 2
+Source0: https://github.com/VcDevel/Vc/releases/download/%{version}/Vc-%version.tar.gz
 %else
 Release: 0.%{scmrev}.1
-Source: %{name}-%{scmrev}.tar.xz
+Source0: %{name}-%{scmrev}.tar.xz
 %endif
 %else
 %if "%{scmrev}" == ""
 Release: 0.%{beta}.1
-Source: %{name}-%{version}%{beta}.tar.bz2
+Source0: %{name}-%{version}%{beta}.tar.bz2
 %else
 Release: 0.%{beta}.%{scmrev}.1
-Source: %{name}-%{scmrev}.tar.xz
+Source0: %{name}-%{scmrev}.tar.xz
 %endif
 %endif
 Patch0: Vc-1.2.0-x86_32.patch
@@ -72,7 +72,7 @@ Development files (Headers etc.) for %{name}.
 %apply_patches
 
 %build
-%cmake -DBUILD_TESTING=OFF
+%cmake -DBUILD_TESTING=OFF -DUSE_LIBC++:BOOL=OFF
 %make
 
 %install
@@ -80,5 +80,5 @@ Development files (Headers etc.) for %{name}.
 
 %files -n %{devname}
 %_includedir/Vc
-%_prefix/lib/cmake/Vc
+%_libdir/cmake/Vc
 %_libdir/*.a
