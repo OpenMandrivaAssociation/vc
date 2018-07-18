@@ -33,13 +33,6 @@ URL: https://github.com/VcDevel/Vc
 License: LGPLv3
 Group: System/Libraries
 
-%track
-prog %{name} = {
-	url = https://github.com/VcDevel/Vc/releases/download/(__VER__)
-	regex = "Vc-(__VER__)\.tar\.gz"
-	version = %{version}
-}
-
 %description
 Vc is a free software library to ease explicit vectorization of C++ code.
 
