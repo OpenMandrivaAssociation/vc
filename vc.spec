@@ -8,11 +8,11 @@
 %define _disable_lto 1
 
 Name: vc
-Version: 1.3.0
+Version: 1.4
 %if "%{beta}" == ""
 %if "%{scmrev}" == ""
-Release: 2
-Source0: https://github.com/VcDevel/Vc/releases/download/%{version}/Vc-%version.tar.gz
+Release: 1
+Source0: https://github.com/VcDevel/Vc/archive/%{version}.tar.gz
 %else
 Release: 0.%{scmrev}.1
 Source0: %{name}-%{scmrev}.tar.xz
@@ -58,13 +58,13 @@ Development files (Headers etc.) for %{name}.
 
 %prep
 %if "%{scmrev}" == ""
-%setup -q -n Vc-%{version}%{beta}
+%autosetup -p1 -n Vc-%{version}%{beta}
 %else
-%setup -q -n Vc
+%autosetup -p1 -n Vc
 %endif
-%apply_patches
 
 %build
+#export CXX=g++
 %cmake -DBUILD_TESTING=OFF -DUSE_LIBC++:BOOL=OFF
 %make
 
