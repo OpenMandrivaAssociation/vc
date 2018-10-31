@@ -11,7 +11,7 @@ Name: vc
 Version: 1.4
 %if "%{beta}" == ""
 %if "%{scmrev}" == ""
-Release: 1
+Release: 2
 Source0: https://github.com/VcDevel/Vc/archive/%{version}.tar.gz
 %else
 Release: 0.%{scmrev}.1
