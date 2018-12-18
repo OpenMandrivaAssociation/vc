@@ -1,11 +1,11 @@
-diff -up Vc-1.4.0/CMakeLists.txt.1~ Vc-1.4.0/CMakeLists.txt
---- Vc-1.4.0/CMakeLists.txt.1~	2018-10-11 15:11:48.253951598 +0200
-+++ Vc-1.4.0/CMakeLists.txt	2018-10-11 15:12:20.926106178 +0200
+diff -up Vc-1.4.1/CMakeLists.txt.1~ Vc-1.4.1/CMakeLists.txt
+--- Vc-1.4.1/CMakeLists.txt.1~	2018-12-18 23:36:18.178467877 +0100
++++ Vc-1.4.1/CMakeLists.txt	2018-12-18 23:36:48.806887002 +0100
 @@ -28,7 +28,7 @@ include (OptimizeForArchitecture)
  
  vc_determine_compiler()
  
--if("${CMAKE_SYSTEM_PROCESSOR}" MATCHES "(x86|AMD64|amd64)")
+-if("${CMAKE_SYSTEM_PROCESSOR}" MATCHES "(i686|x86|AMD64|amd64)")
 +if("${CMAKE_SYSTEM_PROCESSOR}" MATCHES "(i.86|x86|AMD64|amd64)")
     set(Vc_X86 TRUE)
  elseif("${CMAKE_SYSTEM_PROCESSOR}" MATCHES "(arm|aarch32|aarch64)")
