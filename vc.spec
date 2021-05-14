@@ -11,7 +11,7 @@ Name: vc
 Version: 1.4.1
 %if "%{beta}" == ""
 %if "%{scmrev}" == ""
-Release: 1
+Release: 2
 Source0: https://github.com/VcDevel/Vc/archive/%{version}.tar.gz
 %else
 Release: 0.%{scmrev}.1
@@ -27,7 +27,8 @@ Source0: %{name}-%{scmrev}.tar.xz
 %endif
 %endif
 Patch0: Vc-1.2.0-x86_32.patch
-BuildRequires: cmake gcc-c++
+Patch1: vc-1.4.1-libstdc++-11.patch
+BuildRequires: cmake ninja
 Summary: Library to ease explicit vectorization of C++ code
 URL: https://github.com/VcDevel/Vc
 License: LGPLv3
@@ -62,14 +63,13 @@ Development files (Headers etc.) for %{name}.
 %else
 %autosetup -p1 -n Vc
 %endif
+%cmake -DBUILD_TESTING=OFF -DUSE_LIBC++:BOOL=OFF -G Ninja
 
 %build
-#export CXX=g++
-%cmake -DBUILD_TESTING=OFF -DUSE_LIBC++:BOOL=OFF
-%make
+%ninja_build -C build
 
 %install
-%makeinstall_std -C build
+%ninja_install -C build
 
 %files -n %{devname}
 %_includedir/Vc

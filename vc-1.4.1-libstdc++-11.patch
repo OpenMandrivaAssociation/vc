@@ -1,0 +1,11 @@
+diff -up Vc-1.4.1/Vc/common/simdarray.h.omv~ Vc-1.4.1/Vc/common/simdarray.h
+--- Vc-1.4.1/Vc/common/simdarray.h.omv~	2021-05-14 16:18:10.608992338 +0200
++++ Vc-1.4.1/Vc/common/simdarray.h	2021-05-14 16:18:17.407088359 +0200
+@@ -33,6 +33,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBI
+ //#include "../IO"
+ 
+ #include <array>
++#include <limits>
+ 
+ #include "writemaskedvector.h"
+ #include "simdarrayhelper.h"
