@@ -8,10 +8,10 @@
 %define _disable_lto 1
 
 Name: vc
-Version: 1.4.1
+Version: 1.4.2
 %if "%{beta}" == ""
 %if "%{scmrev}" == ""
-Release: 2
+Release: 1
 Source0: https://github.com/VcDevel/Vc/archive/%{version}.tar.gz
 %else
 Release: 0.%{scmrev}.1
@@ -27,7 +27,6 @@ Source0: %{name}-%{scmrev}.tar.xz
 %endif
 %endif
 Patch0: Vc-1.2.0-x86_32.patch
-Patch1: vc-1.4.1-libstdc++-11.patch
 BuildRequires: cmake ninja
 Summary: Library to ease explicit vectorization of C++ code
 URL: https://github.com/VcDevel/Vc
