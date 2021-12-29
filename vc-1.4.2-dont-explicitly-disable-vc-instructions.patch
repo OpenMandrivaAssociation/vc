@@ -1,0 +1,13 @@
+diff -up Vc-1.4.2/cmake/OptimizeForArchitecture.cmake.omv~ Vc-1.4.2/cmake/OptimizeForArchitecture.cmake
+--- Vc-1.4.2/cmake/OptimizeForArchitecture.cmake.omv~	2021-12-29 19:46:11.073922498 +0100
++++ Vc-1.4.2/cmake/OptimizeForArchitecture.cmake	2021-12-29 19:46:47.336364606 +0100
+@@ -573,9 +573,6 @@ Other supported values are: \"none\", \"
+                endif()
+             endif()
+          endforeach(_flag)
+-         foreach(_flag ${_disable_vector_unit_list})
+-            AddCompilerFlag("-mno-${_flag}" CXX_FLAGS Vc_ARCHITECTURE_FLAGS)
+-         endforeach(_flag)
+       endif()
+    endif()
+ endmacro()
