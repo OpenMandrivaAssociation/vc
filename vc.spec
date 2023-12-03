@@ -8,21 +8,21 @@
 %define _disable_lto 1
 
 Name: vc
-Version:	1.4.3
+Version:	1.4.4
 %if "%{beta}" == ""
 %if "%{scmrev}" == ""
-Release:	2
+Release:	1
 Source0: https://github.com/VcDevel/Vc/archive/%{version}.tar.gz
 %else
-Release:	2
+Release:	1
 Source0: %{name}-%{scmrev}.tar.xz
 %endif
 %else
 %if "%{scmrev}" == ""
-Release:	2
+Release:	1
 Source0: %{name}-%{version}%{beta}.tar.bz2
 %else
-Release:	2
+Release:	1
 Source0: %{name}-%{scmrev}.tar.xz
 %endif
 %endif
