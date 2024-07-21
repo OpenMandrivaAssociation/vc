@@ -8,7 +8,7 @@
 %define _disable_lto 1
 
 Name: vc
-Version:	1.4.4
+Version:	1.4.5
 %if "%{beta}" == ""
 %if "%{scmrev}" == ""
 Release:	1
